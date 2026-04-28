@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="description" content="Train schedules between Lund and Malmö">
+  <title>Next Train</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%231a1a2e' width='180' height='180'/><text x='50%' y='50%' font-size='90' fill='white' text-anchor='middle' dy='.3em'>🚂</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%231a1a2e' width='180' height='180'/><text x='50%' y='50%' font-size='90' fill='white' text-anchor='middle' dy='.3em'>🚂</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <div id="loadingSpinner" class="loading">
+      <div class="spinner"></div>
+      <p>Loading trains...</p>
+    </div>
+
+    <div id="content" style="display: none;">
+      <!-- Next Departure (Hero) -->
+      <section class="next-departure">
+        <div class="direction-label" id="directionLabel"></div>
+        
+        <div id="noDepartures" class="no-data" style="display: none;">
+          <p>No departures available</p>
+        </div>
+
+        <div id="nextTrainContainer">
+          <div class="next-train-header">
+            <div class="next-train-time">
+              <div class="time-large" id="nextDepartureTime">--:--</div>
+              <div class="time-small">
+                <span id="minutesUntil">--</span> min
+              </div>
+            </div>
+            <div class="next-train-info">
+              <div class="train-number-large" id="nextTrainNumber">--</div>
+              <div class="operator" id="nextOperator">--</div>
+            </div>
+          </div>
+          <div class="next-train-meta">
+            <div class="meta-item">
+              <span class="label">Track:</span>
+              <span class="value" id="nextTrack">--</span>
+            </div>
+            <div class="meta-item">
+              <span class="label">Service:</span>
+              <span class="value" id="nextProduct">--</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button id="toggleView" class="toggle-btn toggle-btn--small">Switch Direction</button>
+
+      <!-- Upcoming Departures Table -->
+      <section class="upcoming-departures">
+        <h2>Following Departures</h2>
+        <div class="table-wrapper">
+          <table id="departuresTable">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Train</th>
+                <th>Track</th>
+                <th>Operator</th>
+              </tr>
+            </thead>
+            <tbody id="departuresBody">
+              <tr class="loading-row">
+                <td colspan="4">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Last updated -->
+      <footer class="last-updated">
+        <p>Last updated: <span id="lastUpdated">--:--</span></p>
+        <p class="location-status" id="locationStatus"></p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
