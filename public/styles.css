@@ -113,16 +113,6 @@ main {
   background: url('img/leaving-malmoe.jpg') center / cover no-repeat;
 }
 
-.next-departure::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #e94560, #3498db);
-}
-
 .direction-label {
   font-size: 0.85rem;
   color: var(--muted);
