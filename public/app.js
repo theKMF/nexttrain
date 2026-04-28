@@ -29,8 +29,6 @@ const DOM = {
   directionLabel: document.getElementById('directionLabel'),
   nextDepartureTime: document.getElementById('nextDepartureTime'),
   minutesUntil: document.getElementById('minutesUntil'),
-  nextTrainNumber: document.getElementById('nextTrainNumber'),
-  nextOperator: document.getElementById('nextOperator'),
   nextTrack: document.getElementById('nextTrack'),
   nextProduct: document.getElementById('nextProduct'),
   departuresBody: document.getElementById('departuresBody'),
@@ -101,8 +99,6 @@ function render() {
 
   const next = state.trains[0];
   DOM.nextDepartureTime.textContent = next.departureTime;
-  DOM.nextTrainNumber.textContent = next.trainNumber;
-  DOM.nextOperator.textContent = next.operator;
   DOM.nextTrack.textContent = next.track;
   DOM.nextProduct.textContent = next.productInfo;
   updateMinutesDisplay();

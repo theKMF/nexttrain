@@ -1,4 +1,4 @@
-const CACHE_NAME = 'next-train-v1';
+const CACHE_NAME = 'next-train-v2';
 const URLS_TO_CACHE = ['/', '/styles.css', '/app.js', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
